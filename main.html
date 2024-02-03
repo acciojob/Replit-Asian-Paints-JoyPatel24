@@ -1,16 +1,79 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asian Paints</title>
+    <style>
+        #grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
 
+        .grid-item {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
+
+<div>
+    <label for="block_id">Block ID:</label>
+    <input type="number" id="block_id" min="1" max="9">
+
+    <label for="color_id">Color:</label>
+    <input type="color" id="color_id">
+
+    <button id="change_button" onclick="changeColor()">Change Color</button>
+    <button id="reset_button" onclick="resetColors()">Reset</button>
+</div>
+
+<div id="grid-container">
+    <div class="grid-item" id="1">1</div>
+    <div class="grid-item" id="2">2</div>
+    <div class="grid-item" id="3">3</div>
+    <div class="grid-item" id="4">4</div>
+    <div class="grid-item" id="5">5</div>
+    <div class="grid-item" id="6">6</div>
+    <div class="grid-item" id="7">7</div>
+    <div class="grid-item" id="8">8</div>
+    <div class="grid-item" id="9">9</div>
+</div>
+
+<script>
+    function changeColor() {
+        var blockId = document.getElementById("block_id").value;
+        var color = document.getElementById("color_id").value;
+        
+        // Reset background color for all grid items
+        var gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach(item => {
+            item.style.backgroundColor = 'transparent';
+        });
+
+        // Change background color for the selected block
+        var selectedBlock = document.getElementById(blockId);
+        if (selectedBlock) {
+            selectedBlock.style.backgroundColor = color;
+        }
+    }
+
+    function resetColors() {
+        // Reset background color for all grid items
+        var gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach(item => {
+            item.style.backgroundColor = 'transparent';
+        });
+    }
 </script>
 
 </body>
-
 </html>
