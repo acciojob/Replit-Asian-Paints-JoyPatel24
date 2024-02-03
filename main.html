@@ -29,8 +29,8 @@
     <label for="block_id">Block ID:</label>
     <input type="number" id="block_id" min="1" max="9">
 
-    <label for="color_id">Color:</label>
-    <input type="color" id="color_id">
+    <label for="colour_id">Color:</label>
+    <input type="color" id="colour_id">
 
     <button id="change_button" onclick="changeColor()">Change Color</button>
     <button id="reset_button" onclick="resetColors()">Reset</button>
@@ -51,7 +51,7 @@
 <script>
     function changeColor() {
         var blockId = document.getElementById("block_id").value;
-        var color = document.getElementById("color_id").value;
+        var color = document.getElementById("colour_id").value;
         
         // Reset background color for all grid items
         var gridItems = document.querySelectorAll('.grid-item');
